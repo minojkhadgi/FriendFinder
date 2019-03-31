@@ -4,3 +4,10 @@ text-align: center
 p{
     text-align: center
 }
+/* body{
+    background: url(pexels-photo-1116302.jpeg) no-repeat center center fixed;
+
+} */
+.jumbotron{
+    background-color: black;
+}

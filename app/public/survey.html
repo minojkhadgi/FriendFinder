@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,6 +13,8 @@
 </head>
 
 <body>
+        <div class="container">
+                <div class="jumbotron">
     <nav class="navbar navbar-default">
         <p class="navbar-text">
             <h2 class="text-center">Animals Friend Finder Survey Questions</h2>
@@ -44,7 +46,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 2</strong></h3>
                 <h4>You prefer Front End design over Back End scripting.
                 </h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
@@ -56,7 +58,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 3</strong></h3>
                 <h4>how much you like to code at night time?</h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
                     <option value="select">Select an Option</option>
@@ -67,7 +69,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 4</strong></h3>
                 <h4>Coffee helps you to code a lot?</h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
                     <option value="select">Select an Option</option>
@@ -78,7 +80,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 5</strong></h3>
                 <h4>More practice in writing code is better than watching code video?</h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
                     <option value="select">Select an Option</option>
@@ -89,7 +91,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 6</strong></h3>
                 <h4>Data science is better career choice compare to coding?</h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
                     <option value="select">Select an Option</option>
@@ -100,7 +102,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 7</strong></h3>
                 <h4>I love cuddy animals!</h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
                     <option value="select">Select an Option</option>
@@ -111,7 +113,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 8</strong></h3>
                 <h4>Coding bootcamp is better option for IT career?</h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
                     <option value="select">Select an Option</option>
@@ -122,7 +124,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 9</strong></h3>
                 <h4>Backend is more tough compare to frontend?</h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
                     <option value="select">Select an Option</option>
@@ -133,7 +135,7 @@
                     <option value="5">5 Strongly Agree</option>
                 </select>
                 <hr>
-                <h3><strong>Question 1</strong></h3>
+                <h3><strong>Question 10</strong></h3>
                 <h4>whoooo we all hate coding?</h4>
                 <select data-placeholder="" class="chosen-select" id="q1">
                     <option value="select">Select an Option</option>
@@ -164,6 +166,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
         <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/minojkhadgi/FriendFinder">GitHub
                 Repo</a></p>
@@ -174,19 +178,17 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</body>
 
-</html>
 <script type="text/JavaScript">
 $("#add-btn").on("click",function(){
     event.preventDefault();
-    var animalFriend={
+    var newFriend={
         name:$("#n").val().trim(),
         photo:$("#p").val().trim(),
         scores:[$("#q1").val(),$("#q2").val(),$("#q3").val(),$("#q4").val(),$("#q5").val(),$("#q6").val(),$("#q7").val(),$("#q8").val(),$("#q9").val(),$("#q10").val()]
     };
     alert("Searching for your best animal match!!!");
-    $.post("/api/new", animalFriend)
+    $.post("/api/new", newFriend)
     .done(function(data){
         console.log(data);
         $("#caption").text(data.name);
@@ -197,14 +199,7 @@ $("#add-btn").on("click",function(){
     $("#p").val("");
     [$("#q1").val(""),$("#q2").val(""),$("#q3").val(""),$("#q4").val(""),$("#q5").val(""),$("#q6").val(""),$("#q7").val(""),$("#q8").val(""),$("#q9").val(""),$("#q10").val("")]
 });
-
-
-
-
-
-
-
-
-
-
 </script>
+</body>
+
+</html>
